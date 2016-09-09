@@ -11,3 +11,10 @@ test:
   override:
     - echo "Add some tests monkey face!"
 #    - docker-compose run docker-rol npm test
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker tag ci_docker-rol jdewe/docker-rol:latest
+      - docker push jdewe/docker-rol:latest
