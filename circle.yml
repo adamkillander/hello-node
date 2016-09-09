@@ -9,5 +9,5 @@ dependencies:
     - docker-compose -p ci up -d
   test:
     override:
+      - echo "Add some tests monkey face!"
 #      - docker-compose run docker-rol npm test
-    echo "Add some tests monkey face!"
